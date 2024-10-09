@@ -1,0 +1,379 @@
+.body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+div {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    height: 100%;
+    background: linear-gradient(-45deg, #ab504bcc, #e5e191);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-block-outer {
+    width: 500px;
+    height: 90%;
+}
+
+.main-block-inner {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+.todo-item-holder-outer {
+    margin-top: 80px;
+    height: fit-content;
+    overflow: auto;
+    height: 600px;
+    scrollbar-width: none;
+}
+
+.todo-holder-inner {
+    height: fit-content;
+}
+
+.todo-item-adder-outer {
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 130px;
+    left: 0;
+    top: 0;
+    border-bottom-right-radius: 9999px;
+    overflow: auto;
+}
+
+.todo-item-adder {
+    position: absolute;
+    background-color: white;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: none;
+}
+
+.top-part {
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+    letter-spacing: 10px;
+    position: relative;
+}
+
+.bottom-text {
+    width: 70%;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    letter-spacing: 5px;
+    display: block;
+}
+
+.todo-item-adder img {
+    width: 100px;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+}
+
+.todo-item {
+    height: 65px;
+    background-color: rgba(188, 124, 85, 0.459);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 5px 0;
+    padding: 0 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+}
+
+.todo-part {
+    display: flex;
+    align-items: center;
+}
+
+.left-to-do-part .task-text {
+    margin-left: 5px;
+    width: 351px;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.right-to-do-part {
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check {
+    width: 0px;
+    height: 17px;
+    border-radius: 9990px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    background: url('icons/check.svg');
+    background-position: center;
+}
+
+.check img {
+    width: 150%;
+}
+
+.check-outer {
+    width: 17px;
+    height: 17px;
+    border: 1px solid;
+    border-radius: 9990px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type='text'] {
+    letter-spacing: 1px;
+}
+
+.todo-holder-menu {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0 5px;
+    border-bottom: 1px solid white;
+}
+
+.todo-holder-menu > div {
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.straigth-line {
+    height: 70%;
+    border: 1px solid;
+    padding: 0 !important;
+}
+
+.todo-holder-menu div:last-child img {
+    width: 30px;
+}
+
+
+/* ________________ edit window styles ______ */
+
+.edit-window {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-window div {
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid white;
+    box-shadow: 0 0 20px 5px white;
+    border-radius: 10px;
+    position: relative;
+}
+
+.text-changer {
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+}
+
+.changer-btn {
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: transparent;
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.changer-btn:hover {
+    text-shadow: 0 0 10px white;
+}
+
+.edit-text-changer {
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+}
+
+/* ______________ elems-deliter _________________ */
+
+.elems-deliter, .elems-hider {
+    position: relative;
+    user-select: none;
+}
+
+.del-elems-options-holder, .hide-elems-options-holder  {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+    width: 104px;
+    margin-top: 5px;
+    transition: 0.3s all;
+    background-color: rgba(175, 175, 175, 0.519);
+    height: 0px;
+    overflow: hidden;
+}
+
+.option {
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid white;
+    transition: 0.3s;
+}
+
+.option:hover {
+    background-color: rgba(189, 189, 189, 0.749);
+}
+
+/* Media requests _________________________ */
+
+@media screen and (min-width: 320px) and (max-width: 470px), (max-width: 320px) {
+    .left-to-do-part .task-text {
+        width: 160px;
+    }
+    .todo-item-adder-outer {
+        width: 150px;
+    }
+    .bottom-text, h1 {
+        display: none;
+    }
+    .top-part {
+        height: 130px;
+    }
+    .todo-item-holder-outer {
+        margin-top: 50px;
+    }
+} 
+
+@media screen and (min-width: 320px) and (max-width: 400px), (max-width: 320px) {
+    .left-to-do-part .task-text {
+        width: 220px;
+    }
+    .todo-item-adder-outer {
+        width: 150px;
+    }
+    .bottom-text, h1 {
+        display: none;
+    }
+    .top-part {
+        height: 130px;
+    }
+    .todo-item-holder-outer {
+        margin-top: 50px;
+    }
+} 
+
+@media screen and (min-width: 401px) and (max-width: 480px) {
+    .todo-item-adder-outer {
+        width: 150px;
+    }
+    .top-part {
+        height: 130px;
+    }
+
+    .bottom-text, h1 {
+        display: none;
+    }
+    .left-to-do-part .task-text {
+        width: 300px;
+    }
+    .todo-item-holder-outer {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .left-to-do-part .task-text {
+        width: 380px;
+    }
+    .todo-item-holder-outer {
+        margin-top: 90px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .left-to-do-part .task-text {
+        width: 570px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .left-to-do-part .task-text {
+        width: 800px;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+    .left-to-do-part .task-text {
+        width: 1000px;
+    }
+}
+
+@media screen and (min-width: 1401px) {
+    .left-to-do-part .task-text {
+        width: 1170px;
+    }
+}
+
+
+
+
