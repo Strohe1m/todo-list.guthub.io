@@ -289,7 +289,7 @@ function checkLocalStorage() {
     let lcsValue = localStorage.getItem('todo-items')
     lcsValue = JSON.parse(lcsValue)
 
-    if (lcsValue == [] || lcsValue == null) 
+    if (!Array.isArray(lcsValue) || lcsValue.length === 0) 
         return
 
     for (let item of lcsValue) {
